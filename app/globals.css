@@ -1,11 +1,59 @@
 @import 'tailwindcss';
 
 :root {
+  /* Fill */
   --background: #ffffff;
   --foreground: #171717;
+  --button-primary: #1d5360;
+  --green-800: #131f25;
+  --green-900: #0a1619;
+  --green-950: #070707;
+  --global-header: #203a34;
+
+  /* Typography */
+  --typography-active: #effcff;
+  --typography-secondary: #839390;
+
+  /* Borders */
+  --stroke-main: #131f25;
+  --icon-main: #4d6d6d;
+
+  /* Brands */
+  --brand-color: #4eb8d2;
+
+  /* Absolute */
+  --white-100: #ffffff;
+  --black-100: #000000;
+
+  /* Gradients */
+  --background-gradient: linear-gradient(to left, rgb(2, 21, 20) 10%, #040b0b);
+  --solana-gradient: linear-gradient(45deg, #9945ff, #14f195);
+  --first-gradient: linear-gradient(
+    to right,
+    #8b5499,
+    #66b8b9,
+    #b1d877,
+    #ffcd8c
+  );
+  --second-gradient: linear-gradient(
+    90deg,
+    rgba(0, 1, 1, 1) 0%,
+    rgba(19, 44, 50, 1) 50%,
+    rgba(0, 1, 1, 1) 100%
+  );
+  --light-fill-gradient: radial-gradient(
+    circle,
+    rgba(70, 229, 226, 1) 0%,
+    rgba(70, 229, 226, 0) 100%
+  );
 }
 
 @theme inline {
+  --background-gradient: var(--background-gradient);
+  --light-fill-gradient: var(--light-fill-gradient);
+  --solana-gradient: var(--solana-gradient);
+  --first-gradient: var(--first-gradient);
+  --second-gradient: var(--second-gradient);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
