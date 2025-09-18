@@ -26,7 +26,11 @@
   --black-100: #000000;
 
   /* Gradients */
-  --background-gradient: linear-gradient(to left, rgb(2, 21, 20) 10%, #040b0b);
+  --background-gradient: linear-gradient(
+    to right,
+    rgb(4, 11, 11) 80%,
+    rgb(2, 21, 20) 90%
+  );
   --solana-gradient: linear-gradient(45deg, #9945ff, #14f195);
   --first-gradient: linear-gradient(
     to right,
@@ -70,10 +74,8 @@
 body {
   background-color: black;
   background-image: url('../public/background.jpg');
-  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: var(--foreground);
+  background-repeat: repeat;
+
   font-family: Arial, Helvetica, sans-serif;
 }

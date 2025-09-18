@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import MenuItemLink from './MenuItemLink';
-import { MenuItem } from '@/types/navbar';
+import { MenuItem } from '@/lib/types/navbar';
 
 export default function DesktopMenu({ menuItems }: { menuItems: MenuItem[] }) {
   const pathname = usePathname();

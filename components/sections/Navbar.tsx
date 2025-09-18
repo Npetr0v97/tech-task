@@ -17,7 +17,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <Link href="/" className="text-white text-lg font-bold">
-            <Image src="/logo.png" alt="Logo" width={40} height={40} />
+            <Image src="/logo.svg" alt="Logo" width={40} height={40} />
           </Link>
         </div>
         {/* Desktop Menu */}
