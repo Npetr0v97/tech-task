@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react'; // hamburger + close icons
 import MenuItemLink from './MenuItemLink';
-import { MenuItem } from '@/types/navbar';
+import { MenuItem } from '@/lib/types/navbar';
 
 export default function MobileMenu({ menuItems }: { menuItems: MenuItem[] }) {
   const [isOpen, setIsOpen] = useState(false);

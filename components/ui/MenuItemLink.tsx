@@ -1,4 +1,4 @@
-import { MenuItem } from '@/types/navbar';
+import { MenuItem } from '@/lib/types/navbar';
 import Link from 'next/link';
 
 export default function MenuItemLink({
