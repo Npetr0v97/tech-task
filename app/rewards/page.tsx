@@ -17,6 +17,7 @@ const commonTextStyleSecondary =
 
 export default async function Rewards() {
   const userId = '12345';
+
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
   // Fetch config

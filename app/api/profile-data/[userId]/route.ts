@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { mockProfileData } from './mock';
 
-interface RouteContext {
-  params: Promise<{ userId: string }>;
-}
-
-export async function GET(req: NextRequest, context: RouteContext) {
-  const { userId } = await context.params;
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { userId: string } }
+) {
+  const { userId } = params;
 
   if (!userId) {
     return NextResponse.json({ error: 'Missing userId' }, { status: 400 });
