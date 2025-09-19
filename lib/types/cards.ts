@@ -34,13 +34,20 @@ export type ClaimButtonProps = {
   Icon: React.ComponentType<IconProps>;
 };
 
+export type TableViewProps = {
+  headers: string[];
+  rowLabels: string[];
+  data: (string | number)[][];
+  className?: string;
+};
+
 export type CardProps<T extends object> = {
+  MainContent: React.ComponentType<T>;
+  mainContentProps: T;
   topLeftComponent?: React.ReactNode;
   topRightComponent?: React.ReactNode;
   bottomLeftComponent?: React.ReactNode;
   bottomRightComponent?: React.ReactNode;
-  MainContent: React.ComponentType<T>;
-  mainContentProps: T;
 };
 
 export type CardContainerProps<T extends object> = {

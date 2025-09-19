@@ -1,11 +1,5 @@
 import React from 'react';
-
-export type TableViewProps = {
-  headers: string[];
-  rowLabels: string[];
-  data: (string | number)[][];
-  className?: string;
-};
+import { TableViewProps } from '@/lib/types/cards';
 
 export default function TableView({
   headers,
@@ -60,3 +54,6 @@ export default function TableView({
     </div>
   );
 }
+
+//required for performance optimization
+TableView.displayName = 'TableView';
