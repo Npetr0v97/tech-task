@@ -12,7 +12,7 @@ export default function SummaryView({
         height={18}
         className="text-[var(--typography-secondary)]"
       />
-      <div className="text-[var(--typography-active)] font-600 font-semibold">
+      <div className="text-[var(--typography-active)] font-semibold">
         {text}
       </div>
     </div>
