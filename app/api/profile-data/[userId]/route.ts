@@ -3,9 +3,9 @@ import { mockProfileData } from './mock';
 
 export async function GET(
   req: NextRequest,
-  context: { params: { userId: string } } // ✅ matches App Router
+  context: { params: Promise<{ userId: string }> }
 ) {
-  const { userId } = context.params;
+  const { userId } = await context.params; // ✅ await the promise
 
   if (!userId) {
     return NextResponse.json({ error: 'Missing userId' }, { status: 400 });
