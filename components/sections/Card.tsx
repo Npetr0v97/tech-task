@@ -1,3 +1,33 @@
-export default function Hero() {
-  return <h2 className="text-red-600 text-2xl font-bold">This is the Card</h2>;
+import SimpleText from '@/components/ui/SimpleText';
+import { CardProps } from '@/lib/types/cards';
+
+export default function Card<T extends object>({
+  topLeftComponent,
+  topRightComponent,
+  bottomLeftComponent,
+  bottomRightComponent,
+  MainContent,
+  mainContentProps,
+}: CardProps<T>) {
+  return (
+    <div
+      className={`flex flex-col w-full font-bold  items-center justify-center border-1 border-[var(--stroke-main)] rounded-lg overflow-hidden`}
+    >
+      {(topLeftComponent || topRightComponent) && (
+        <div className="w-full h-8 flex justify-between items-center flex-3 px-3 border-b-1 border-[var(--stroke-main)] bg-(image:--background-gradient) ">
+          <div>{topLeftComponent ?? ''}</div>
+          <div>{topRightComponent ?? ''}</div>
+        </div>
+      )}
+      <div className="flex w-full justify-center items-center flex-6 bg-(image:--second-gradient)">
+        <MainContent {...mainContentProps} />
+      </div>
+      {(bottomLeftComponent || bottomRightComponent) && (
+        <div className="w-full h-8 flex justify-between items-center flex-3 px-3 border-t-1 border-[var(--stroke-main)] bg-(image:--background-gradient) ">
+          <div>{bottomLeftComponent ?? ''}</div>
+          <div>{bottomRightComponent ?? ''}</div>
+        </div>
+      )}
+    </div>
+  );
 }

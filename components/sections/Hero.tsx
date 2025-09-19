@@ -4,8 +4,8 @@ import HeroIcon from '@/components/ui/svgs/HeroIcon';
 import CopyIcon from '@/components/ui/svgs/CopyIcon';
 import { useState } from 'react';
 
-export default function Hero() {
-  const progress = 50;
+export default function Hero({ className = '' }: { className?: string }) {
+  const progress = 'w-[35%]';
   const [copied, setCopied] = useState(false);
   const textToCopy = 'https://Platform.io/@R433137';
 
@@ -19,7 +19,9 @@ export default function Hero() {
       .catch((err) => console.error('Failed to copy: ', err));
   };
   return (
-    <div className="flex flex-col justify-center items-start h-[35vh] text-white mt-16 pt-16 w-full px-8">
+    <div
+      className={`flex flex-col bg-transparent justify-center items-start min-h-[20vh] text-white mt-15 mb-2 pt-15 w-full px-8 ${className}`}
+    >
       <span className="flex items-center self-center color-[var(--brand-color)] mb-2">
         <HeroIcon className="text-[var(--brand-color)] w-7 h-7" />
         <h1 className="text-3xl sm:text-4xl font-bold ml-1">
@@ -31,7 +33,7 @@ export default function Hero() {
       <div className="flex justify-between mb-2 w-full text-[var(--typography-secondary)]">
         <h2>
           Earned{' '}
-          <span className="text-[var(--brand-color)] text-xl font-extrabold">
+          <span className="text-[var(--brand-color)] font-600 font-semibold">
             $124.34
           </span>
         </h2>
@@ -45,13 +47,11 @@ export default function Hero() {
       {/* Progress Bar Container */}
       <div className="w-[99.5%] m-auto mb-2 mt-0 h-2 bg-white/20 rounded-full overflow-hidden">
         {/* Progress */}
-        <div
-          className={`h-full bg-[var(--brand-color)] w-[${progress}%]`}
-        ></div>
+        <div className={`h-full bg-[var(--brand-color)] ${progress}`}></div>
       </div>
 
       {/* Bottom texts */}
-      <div className="flex justify-between mb-1 w-full text-[var(--typography-secondary)]">
+      <div className="flex justify-between w-full text-[var(--typography-secondary)]">
         <h2>Next Level: 2.5X Rewards rate for Points and SOL</h2>
 
         {!copied && (
