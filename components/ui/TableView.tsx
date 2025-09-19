@@ -22,9 +22,7 @@ export default function TableView({
       <table className="w-full table-fixed border-collapse text-sm text-center">
         <thead className="bg-[var(--background-gradient)]">
           <tr>
-            {/* empty corner cell */}
-            {/* <th className="px-4 font-normal text-[var(--typography-secondary)]"></th> */}
-            {headers.map((header, idx) => (
+            {headers?.map((header, idx) => (
               <th
                 key={idx}
                 className={`px-4 font-semibold ${
@@ -39,13 +37,13 @@ export default function TableView({
           </tr>
         </thead>
         <tbody>
-          {data.map((row, rowIdx) => (
+          {data?.map((row, rowIdx) => (
             <tr key={rowIdx} className="border-t border-[var(--stroke-main)]">
               {/* first column with row label */}
               <td className="px-4 py-2 ml-10 text-left font-semibold text-[var(--typography-secondary)]">
                 {rowLabels[rowIdx]}
               </td>
-              {row.map((cell, colIdx) => (
+              {row?.map((cell, colIdx) => (
                 <td
                   key={colIdx}
                   className={`px-4 py-2 ${
