@@ -1,4 +1,3 @@
-import SimpleText from '@/components/ui/SimpleText';
 import { CardProps } from '@/lib/types/cards';
 
 export default function Card<T extends object>({
@@ -11,10 +10,10 @@ export default function Card<T extends object>({
 }: CardProps<T>) {
   return (
     <div
-      className={`flex flex-col w-full font-bold  items-center justify-center border-1 border-[var(--stroke-main)] rounded-lg overflow-hidden`}
+      className={`flex flex-col w-full font-bold  items-center justify-center border-1 border-[var(--stroke-main)] rounded-lg overflow-hidden  min-h-[120px]`}
     >
       {(topLeftComponent || topRightComponent) && (
-        <div className="w-full h-8 flex justify-between items-center flex-3 px-3 border-b-1 border-[var(--stroke-main)] bg-(image:--background-gradient) ">
+        <div className="w-full h-8 flex justify-between items-center flex-3 px-2 sm:px-3 border-b-1 border-[var(--stroke-main)] bg-(image:--background-gradient) min-h-[55px]">
           <div>{topLeftComponent ?? ''}</div>
           <div>{topRightComponent ?? ''}</div>
         </div>
@@ -23,7 +22,7 @@ export default function Card<T extends object>({
         <MainContent {...mainContentProps} />
       </div>
       {(bottomLeftComponent || bottomRightComponent) && (
-        <div className="w-full h-8 flex justify-between items-center flex-3 px-3 border-t-1 border-[var(--stroke-main)] bg-(image:--background-gradient) ">
+        <div className="w-full h-8 flex justify-between items-center flex-3 px-2 sm:px-3 border-t-1 border-[var(--stroke-main)] bg-(image:--background-gradient) min-h-[55px]">
           <div>{bottomLeftComponent ?? ''}</div>
           <div>{bottomRightComponent ?? ''}</div>
         </div>

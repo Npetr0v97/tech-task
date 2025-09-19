@@ -19,7 +19,7 @@ export default function TableView({
         className ?? ''
       }`}
     >
-      <table className="w-full table-fixed border-collapse text-sm text-center">
+      <table className="w-full table-fixed border-collapse text-[0.60rem] sm:text-sm text-center">
         <thead className="bg-[var(--background-gradient)]">
           <tr>
             {headers?.map((header, idx) => (
