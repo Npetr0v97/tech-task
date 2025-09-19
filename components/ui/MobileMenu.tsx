@@ -12,7 +12,7 @@ export default function MobileMenu({ menuItems }: { menuItems: MenuItem[] }) {
   return (
     <div className="fixed right-5 top-5">
       <button
-        className="sm:hidden text-white"
+        className="md:hidden text-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
@@ -23,7 +23,7 @@ export default function MobileMenu({ menuItems }: { menuItems: MenuItem[] }) {
       </button>
       {/* Mobile dropdown menu */}
       {isOpen && (
-        <div className="sm:hidden flex mr-5 flex-col px-6 top-0 bg-(image:--background-gradient) rounded-[25px]">
+        <div className="md:hidden flex mr-5 flex-col px-6 top-0 bg-(image:--background-gradient) rounded-[25px]">
           {menuItems.map((item, index) => {
             const isActive = pathname === item.href;
             return (

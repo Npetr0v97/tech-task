@@ -39,17 +39,17 @@
     #b1d877,
     #ffcd8c
   );
-  --second-gradient: linear-gradient(
-    90deg,
-    rgba(0, 1, 1, 1) 0%,
-    rgba(19, 44, 50, 1) 50%,
-    rgba(0, 1, 1, 1) 100%
+  --second-gradient: radial-gradient(
+    circle,
+    rgba(19, 44, 50, 1) 0%,
+    rgba(0, 1, 1, 1) 70%
   );
   --light-fill-gradient: radial-gradient(
     circle,
     rgba(70, 229, 226, 1) 0%,
-    rgba(70, 229, 226, 0) 100%
+    rgba(70, 229, 226, 0) 80%
   );
+  --user-avatar-gradient: linear-gradient(135deg, #02f553, #00beec);
 }
 
 @theme inline {
@@ -60,14 +60,15 @@
   --second-gradient: var(--second-gradient);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+
+  --font-sans: var(--font-ibm-plex-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
@@ -76,6 +77,5 @@ body {
   background-image: url('../public/background.jpg');
   background-position: center;
   background-repeat: repeat;
-
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ibm-plex-sans), sans-serif;
 }
