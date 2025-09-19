@@ -16,27 +16,23 @@ const commonTextStyleSecondary =
   'text-[var(--typography-secondary)] font-medium';
 
 export default async function Rewards() {
-  const userId = '12345';
-
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const BASE_URL = 'https://tech-task-be-production.up.railway.app';
 
   // Fetch config
-  const configProfileRes = await fetch(
-    `${BASE_URL}/api/config/${userId}?type=profile`
-  );
+  const configProfileRes = await fetch(`${BASE_URL}/config/?type=profile`);
   const configProfile = await configProfileRes.json();
   const configTransactionsRes = await fetch(
-    `${BASE_URL}/api/config/${userId}?type=transactions`
+    `${BASE_URL}/config/?type=transactions`
   );
   const configTransactions = await configTransactionsRes.json();
 
   // Fetch profileData
-  const profileDataRes = await fetch(`${BASE_URL}/api/profile-data/${userId}`);
+  const profileDataRes = await fetch(`${BASE_URL}/profile`);
   const profileData = await profileDataRes.json();
-
   // Fetch transactions
-  const transactionsRes = await fetch(`${BASE_URL}/api/transactions/${userId}`);
+  const transactionsRes = await fetch(`${BASE_URL}/transactions`);
   const transactions = await transactionsRes.json();
+
   const threeCardData = [
     {
       topLeftComponent: SimpleText({
