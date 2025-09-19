@@ -1,17 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { mockConfigurations } from './mock';
-type RouteContext = {
-  params: { userId: string };
-};
-export async function GET(request: NextRequest, { params }: RouteContext) {
-  const { userId } = params;
 
-  // Grab the query parameter from the URL
-  const { searchParams } = new URL(request.url);
-  const type: string = searchParams.get('type') ?? 'profile';
-  let data;
+interface RouteContext {
+  params: Promise<{ userId: string }>;
+}
+
+export async function GET(req: NextRequest, context: RouteContext) {
+  const { userId } = await context.params;
+
+  if (!userId) {
+    return NextResponse.json({ error: 'Missing userId' }, { status: 400 });
+  }
+
+  const { searchParams } = new URL(req.url);
+  const type = searchParams.get('type') ?? 'profile';
+
   try {
-    data = mockConfigurations?.[userId]?.[type];
+    const userConfig = mockConfigurations[userId];
+    if (!userConfig) {
+      return NextResponse.json(
+        { error: `No configuration found for user ${userId}` },
+        { status: 404 }
+      );
+    }
+
+    const data = userConfig[type];
+    if (!data) {
+      return NextResponse.json(
+        { error: `No configuration of type "${type}" for user ${userId}` },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(data);
   } catch (err) {
     console.error('Error fetching configuration:', err);
     return NextResponse.json(
@@ -19,6 +40,4 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
       { status: 500 }
     );
   }
-
-  return NextResponse.json(data);
 }
