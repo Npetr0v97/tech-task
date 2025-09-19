@@ -1,10 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { mockConfigurations } from './mock';
-
-export async function GET(
-  request: Request,
-  { params }: { params: { userId: string } }
-) {
+type RouteContext = {
+  params: { userId: string };
+};
+export async function GET(request: NextRequest, { params }: RouteContext) {
   const { userId } = params;
 
   // Grab the query parameter from the URL
