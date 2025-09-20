@@ -21,6 +21,7 @@ export default function Card<
   MainContent,
   mainContentProps,
 }: CardProps<TMain, TTopLeft, TTopRight, TBottomLeft, TBottomRight>) {
+  // Dynamic loading for heavier compoents such as the Table. All the "heavy" components can be added to a list
   const DynamicTable = dynamic(() => import('../ui/TableView'), {
     loading: () => (
       <motion.div
@@ -39,7 +40,7 @@ export default function Card<
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -10 }} // 👈 fade + slide in
+      initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       className={`flex flex-col w-full font-bold  items-center justify-center border-1 border-[var(--stroke-main)] rounded-lg overflow-hidden  min-h-[120px]`}
