@@ -1,6 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import Card from '@/components/sections/Card';
 import CardContainer from '@/components/sections/CardContainer';
+import { fetchConfig, fetchBasicData } from '@/lib/services/api/rewards';
 import {
   getTransactionsData,
   getUserData,
@@ -8,22 +9,13 @@ import {
 } from '@/lib/utils/config';
 
 export default async function Rewards() {
-  const BASE_URL = 'https://tech-task-be-production.up.railway.app';
-
-  // Fetch config
-  const configProfileRes = await fetch(`${BASE_URL}/config/?type=profile`);
-  const configProfile = await configProfileRes.json();
-  const configTransactionsRes = await fetch(
-    `${BASE_URL}/config/?type=transactions`
-  );
-  const configTransactions = await configTransactionsRes.json();
-
-  // Fetch profileData
-  const profileDataRes = await fetch(`${BASE_URL}/profile`);
-  const profileData = await profileDataRes.json();
-  // Fetch transactions
-  const transactionsRes = await fetch(`${BASE_URL}/transactions`);
-  const transactions = await transactionsRes.json();
+  const [configProfile, configTransactions, profileData, transactions] =
+    await Promise.all([
+      fetchConfig('profile'),
+      fetchConfig('transactions'),
+      fetchBasicData('profile'),
+      fetchBasicData('transactions'),
+    ]);
 
   const threeCardData = getThreeCardData();
   const userData = getUserData(configProfile, profileData);
