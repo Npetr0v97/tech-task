@@ -22,7 +22,15 @@ export default function Card<
   mainContentProps,
 }: CardProps<TMain, TTopLeft, TTopRight, TBottomLeft, TBottomRight>) {
   const DynamicTable = dynamic(() => import('../ui/TableView'), {
-    loading: () => <div className="p-4">Loading table...</div>,
+    loading: () => (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="p-4"
+      >
+        Loading table...
+      </motion.div>
+    ),
   });
 
   const Content = (
