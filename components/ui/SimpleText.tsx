@@ -1,3 +1,4 @@
+'use client';
 import { SimpleTextProps } from '@/lib/types/cards';
 
 export default function SimpleText({ value, className = '' }: SimpleTextProps) {

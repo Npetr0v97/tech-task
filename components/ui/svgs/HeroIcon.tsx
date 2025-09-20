@@ -1,3 +1,4 @@
+'use client';
 import { IconProps } from '@/lib/types/icon';
 
 const HeroIcon = ({ width = 20, height = 20, className = '' }: IconProps) => (

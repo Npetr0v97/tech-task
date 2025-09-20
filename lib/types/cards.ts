@@ -41,18 +41,46 @@ export type TableViewProps = {
   className?: string;
 };
 
-export type CardProps<T extends object> = {
-  MainContent: React.ComponentType<T>;
-  mainContentProps: T;
-  topLeftComponent?: React.ReactNode;
-  topRightComponent?: React.ReactNode;
-  bottomLeftComponent?: React.ReactNode;
-  bottomRightComponent?: React.ReactNode;
+export type CardProps<
+  TMain extends object,
+  TTopLeft extends object,
+  TTopRight extends object,
+  TBottomLeft extends object,
+  TBottomRight extends object
+> = {
+  MainContent: React.ComponentType<TMain>;
+  mainContentProps: TMain;
+
+  topLeftComponent?: React.ComponentType<TTopLeft>;
+  topLeftProps?: TTopLeft;
+
+  topRightComponent?: React.ComponentType<TTopRight>;
+  topRightProps?: TTopRight;
+
+  bottomLeftComponent?: React.ComponentType<TBottomLeft>;
+  bottomLeftProps?: TBottomLeft;
+
+  bottomRightComponent?: React.ComponentType<TBottomRight>;
+  bottomRightProps?: TBottomRight;
 };
 
-export type CardContainerProps<T extends object> = {
-  Card: React.ComponentType<CardProps<T>>;
-  cardDataArray: CardProps<T>[];
+export type CardContainerProps<
+  TMain extends object,
+  TTopLeft extends object,
+  TTopRight extends object,
+  TBottomLeft extends object,
+  TBottomRight extends object
+> = {
+  Card: React.ComponentType<
+    CardProps<TMain, TTopLeft, TTopRight, TBottomLeft, TBottomRight>
+  >;
+  cardDataArray: CardProps<
+    TMain,
+    TTopLeft,
+    TTopRight,
+    TBottomLeft,
+    TBottomRight
+  >[];
   className?: string;
   hasBackgroundGlow?: boolean;
 };

@@ -1,11 +1,16 @@
-import { CardProps } from '@/lib/types/cards';
 import { CardContainerProps } from '@/lib/types/cards';
-export default function CardContainer<T extends object>({
+export default function CardContainer<
+  TMain extends object,
+  TTopLeft extends object,
+  TTopRight extends object,
+  TBottomLeft extends object,
+  TBottomRight extends object
+>({
   Card,
   cardDataArray,
   className = '',
   hasBackgroundGlow = false,
-}: CardContainerProps<T>) {
+}: CardContainerProps<TMain, TTopLeft, TTopRight, TBottomLeft, TBottomRight>) {
   return (
     <div
       className={`w-full flex flex-col md:flex-row justify-space px-4 gap-3 mb-3 ${className}`}

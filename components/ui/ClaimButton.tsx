@@ -1,3 +1,4 @@
+'use client';
 import { ClaimButtonProps } from '@/lib/types/cards';
 
 export default function ClaimButton({ value, Icon }: ClaimButtonProps) {

@@ -1,4 +1,6 @@
+'use client';
 import { UserDetailsProps } from '@/lib/types/cards';
+
 import Image from 'next/image';
 
 export default function UserDetails({ username, imgUrl }: UserDetailsProps) {
