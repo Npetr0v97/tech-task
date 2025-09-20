@@ -1,3 +1,4 @@
+'use client';
 import Detail from '@/components/ui/Detail';
 
 export default function ComplexView() {

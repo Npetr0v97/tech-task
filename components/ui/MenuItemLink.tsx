@@ -1,3 +1,4 @@
+'use client';
 import { MenuItem } from '@/lib/types/navbar';
 import Link from 'next/link';
 

@@ -1,3 +1,4 @@
+'use client';
 import { DetailProps } from '@/lib/types/cards';
 
 export default function Detail({ label, value }: DetailProps) {

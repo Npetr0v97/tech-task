@@ -1,9 +1,9 @@
+'use client';
 import { SummaryViewProps } from '@/lib/types/cards';
 import MeteoriteIcon from '@/components/ui/svgs/MeteoriteIcon';
 export default function SummaryView({
   text,
   Icon = MeteoriteIcon,
-  className,
 }: SummaryViewProps) {
   return (
     <div className="flex flex-row gap-1 items-center justify-center">

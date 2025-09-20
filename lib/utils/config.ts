@@ -13,64 +13,75 @@ const commonTextStyleActive = 'text-[var(--typography-active)] font-medium';
 const commonTextStyleSecondary =
   'text-[var(--typography-secondary)] font-medium';
 
-const threeCardData = [
+export const threeCardData = [
   {
-    topLeftComponent: SimpleText({
+    topLeftComponent: SimpleText,
+    topLeftProps: {
       value: 'My Rank',
       className: commonTextStyleSecondary,
-    }),
-    topRightComponent: SimpleText({
+    },
+    topRightComponent: SimpleText,
+    topRightProps: {
       value: 'Tier 2',
       className: commonTextStyleActive,
-    }),
+    },
     MainContent: SummaryView,
     mainContentProps: { text: 'Meteorite', Icon: MeteoriteIcon },
   },
   {
-    topLeftComponent: SimpleText({
+    topLeftComponent: SimpleText,
+    topLeftProps: {
       value: 'SOL Earned',
       className: commonTextStyleSecondary,
-    }),
-    topRightComponent: SimpleText({
+    },
+    topRightComponent: SimpleText,
+    topRightProps: {
       value: { label: 'Last Claim', text: "Feb' 24, 2025" },
       className: commonTextStyleActive,
-    }),
+    },
     MainContent: SummaryView,
     mainContentProps: { text: '100.11K', Icon: SolanaIcon },
   },
   {
-    topLeftComponent: SimpleText({
+    topLeftComponent: SimpleText,
+    topLeftProps: {
       value: 'My Points',
       className: commonTextStyleSecondary,
-    }),
-    topRightComponent: SimpleText({
+    },
+    topRightComponent: SimpleText,
+    topRightProps: {
       value: '1.5x Rewards',
       className: commonTextStyleActive,
-    }),
+    },
     MainContent: SummaryView,
     mainContentProps: { text: '5,017 Points', Icon: PointsIcon },
   },
 ];
 
-const userData = [
+export const userData = [
   {
-    topLeftComponent: UserDetails({ username: 'Username' }),
-    topRightComponent: ComplexView(),
-    bottomLeftComponent: SimpleText({
+    topLeftComponent: UserDetails,
+    topLeftProps: { username: 'Username' },
+    topRightComponent: ComplexView,
+    topRightProps: {},
+    bottomLeftComponent: SimpleText,
+    bottomLeftProps: {
       value: 'Claim Your Earnings',
       className: commonTextStyleSecondary,
-    }),
-    bottomRightComponent: ClaimButton({ value: '0.134', Icon: SolanaIcon }),
+    },
+    bottomRightComponent: ClaimButton,
+    bottomRightProps: { value: '0.134', Icon: SolanaIcon },
     MainContent: TableView,
   },
 ];
 
-const transactionsData = [
+export const transactionsData = [
   {
-    topLeftComponent: SimpleText({
+    topLeftComponent: SimpleText,
+    topLeftProps: {
       value: 'Network',
       className: commonTextStyleSecondary,
-    }),
+    },
     MainContent: TableView,
   },
 ];

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { TableViewProps } from '@/lib/types/cards';
 
