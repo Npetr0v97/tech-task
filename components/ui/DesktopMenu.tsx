@@ -7,7 +7,7 @@ import { MenuItem } from '@/lib/types/navbar';
 export default function DesktopMenu({ menuItems }: { menuItems: MenuItem[] }) {
   const pathname = usePathname();
   return (
-    <div className="hidden md:flex space-x-5 ml-10 align-center">
+    <div className="flex gap-2">
       {menuItems.map((item, index) => {
         const isActive = pathname === item.href;
         return (

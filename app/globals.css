@@ -8,7 +8,7 @@
   --green-800: #131f25;
   --green-900: #0a1619;
   --green-950: #070707;
-  --global-header: #203a34;
+  --global-header: rgb(32, 58, 52, 0.2);
 
   /* Typography */
   --typography-active: #effcff;
@@ -26,6 +26,13 @@
   --black-100: #000000;
 
   /* Gradients */
+  --gradient-custom-dark: linear-gradient(
+    247.74deg,
+    #021514 0.02%,
+    #040b0b 21.79%,
+    #040b0b 74.47%,
+    #021514 99.98%
+  );
   --background-gradient: linear-gradient(
     to right,
     rgb(4, 11, 11) 80%,
@@ -60,7 +67,7 @@
   --second-gradient: var(--second-gradient);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
+  --gradient-custom-dark: var(--gradient-custom-dark);
   --font-sans: var(--font-ibm-plex-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -74,8 +81,7 @@
 
 body {
   background-color: black;
-  background-image: url('../public/background.jpg');
-  background-position: center;
-  background-repeat: repeat;
+  background-image: var(--gradient-custom-dark);
+  font-family: var(--font-ibm-plex-sans), sans-serif;
   font-family: var(--font-ibm-plex-sans), sans-serif;
 }

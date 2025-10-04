@@ -12,18 +12,16 @@ const menuItems = [
 ];
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-(image:--background-gradient) shadow-md z-50">
-      <div className="flex items-center justify-start h-15 px-6">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <Link href="/" className="text-white text-lg font-bold">
-            <Image src="/logo.svg" alt="Logo" width={40} height={40} />
-          </Link>
-        </div>
-        {/* Desktop Menu */}
-        <DesktopMenu menuItems={menuItems} />
-        <MobileMenu menuItems={menuItems} />
+    <nav className="w-full bg-[var(--global-header)] h-12 px-3 flex items-center gap-5.5 border-b border-black">
+      {/* Logo */}
+      <div>
+        <Link href="/">
+          <Image src="/logo.svg" alt="Logo" width={36} height={24} />
+        </Link>
       </div>
+      {/* Desktop Menu */}
+      <DesktopMenu menuItems={menuItems} />
+      <MobileMenu menuItems={menuItems} />
     </nav>
   );
 }
