@@ -7,11 +7,13 @@ export default function SimpleText({ value, className = '' }: SimpleTextProps) {
   return (
     <div className={`${className}`}>
       {label && (
-        <span className="font-400 text-[var(--typography-secondary)] text-xs sm:text-[0.8rem] md:text-[0.8rem]">
+        <span className="text-[var(--typography-secondary)] font-normal text-xs leading-[12px] text-center">
           {label}:{' '}
         </span>
       )}
-      <span className="text-xs sm:text-sm md:text-base">{text}</span>
+      <span className="font-medium text-xs leading-[12px] text-center">
+        {text}
+      </span>
     </div>
   );
 }

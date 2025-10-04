@@ -25,19 +25,18 @@ export default async function Rewards() {
   );
 
   return (
-    <div className="font-sans flex flex-col items-center justify-items-center min-h-screen">
-      <Hero className="flex-2" />
+    <div className="font-sans flex flex-col items-center justify-items-center">
+      <Hero />
       <CardContainer
         Card={Card}
         cardDataArray={threeCardData}
-        className="flex-15"
         hasBackgroundGlow={true}
       />
-      <CardContainer Card={Card} cardDataArray={userData} className="flex-15" />
+      <CardContainer Card={Card} cardDataArray={userData} cardHeight={306} />
       <CardContainer
         Card={Card}
         cardDataArray={transactionsData}
-        className="flex-15"
+        cardHeight={346}
       />
     </div>
   );

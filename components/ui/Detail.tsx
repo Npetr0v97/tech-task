@@ -1,13 +1,22 @@
 'use client';
 import { DetailProps } from '@/lib/types/cards';
 
-export default function Detail({ label, value }: DetailProps) {
+export default function Detail({
+  label,
+  value,
+  firstElement = false,
+  finalElement = false,
+}: DetailProps) {
   return (
-    <div className="flex flex-col justify-center items-center text-center text-[0.55rem] sm:text-xs md:text-sm">
-      <div className="font-thin font-[12px] text-[var(--typography-secondary)] ">
+    <div
+      className={`flex flex-col gap-1 px-5 justify-center items-center ${
+        firstElement ? '' : 'border-l-1 border-[var(--stroke-main)]'
+      } ${finalElement ? 'pr-0' : ''}`}
+    >
+      <div className="text-[var(--typography-secondary)] font-normal text-xs leading-[12px] align-middle">
         {label}
       </div>
-      <div className="font-medium text-[var(--typography-active)] mt-1">
+      <div className="text-[var(--typography-active)] font-medium text-sm leading-[14px] align-middle">
         {value}
       </div>
     </div>

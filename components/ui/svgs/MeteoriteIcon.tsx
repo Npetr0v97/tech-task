@@ -3,8 +3,8 @@ import * as React from 'react';
 import { IconProps } from '@/lib/types/icon';
 
 const MeteoriteIcon = ({
-  width = 25,
-  height = 25,
+  width = 14,
+  height = 14,
   className = '',
 }: IconProps) => (
   <svg

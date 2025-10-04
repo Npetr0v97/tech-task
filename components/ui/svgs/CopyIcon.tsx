@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { IconProps } from '@/lib/types/icon';
 
-const CopyIcon = ({ width = 15, height = 15, className = '' }: IconProps) => (
+const CopyIcon = ({ width = 11, height = 11, className = '' }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}

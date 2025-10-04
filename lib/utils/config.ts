@@ -8,6 +8,7 @@ import UserDetails from '@/components/ui/UserDetails';
 import ClaimButton from '@/components/ui/ClaimButton';
 import TableView from '@/components/ui/TableView';
 import { ConfigParams } from '../types/config';
+import FooterText from '@/components/ui/FooterText';
 
 const commonTextStyleActive = 'text-[var(--typography-active)] font-medium';
 const commonTextStyleSecondary =
@@ -64,10 +65,9 @@ export const userData = [
     topLeftProps: { username: 'Username' },
     topRightComponent: ComplexView,
     topRightProps: {},
-    bottomLeftComponent: SimpleText,
+    bottomLeftComponent: FooterText,
     bottomLeftProps: {
-      value: 'Claim Your Earnings',
-      className: commonTextStyleSecondary,
+      text: 'Claim Your Earnings',
     },
     bottomRightComponent: ClaimButton,
     bottomRightProps: { value: '0.134', Icon: SolanaIcon },

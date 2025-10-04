@@ -8,21 +8,18 @@ export default function CardContainer<
 >({
   Card,
   cardDataArray,
-  className = '',
   hasBackgroundGlow = false,
+  cardHeight = 112,
 }: CardContainerProps<TMain, TTopLeft, TTopRight, TBottomLeft, TBottomRight>) {
   return (
     <div
-      className={`w-full flex flex-col md:flex-row justify-space px-4 gap-3 mb-3 ${className}`}
+      className={`w-full flex flex-col ${
+        hasBackgroundGlow ? 'bg-(image:--light-fill-gradient)' : ''
+      } z-[-0] md:flex-row justify-space px-3 gap-3 pb-3`}
     >
       {cardDataArray?.map((cardData, index) => (
-        <Card key={index} {...cardData} />
+        <Card key={index} {...cardData} customHeight={cardHeight} />
       ))}
-      {hasBackgroundGlow && (
-        <div className="absolute inset-0 z-[-1] flex items-center justify-center pointer-events-none">
-          <div className="h-[40vh] w-[80vw] bg-[image:var(--light-fill-gradient)] opacity-30 blur-3xl rounded-full" />
-        </div>
-      )}
     </div>
   );
 }
