@@ -8,6 +8,7 @@ const menuItems = [
   { name: 'Page 2', href: '/random', isActive: false },
   { name: 'Page 3', href: '/error', isActive: false },
   { name: 'Page 4', href: '/about', isActive: false },
+  { name: 'Page 5', href: '/something', isActive: false },
   { name: 'Rewards', href: '/rewards', isActive: false },
 ];
 export default function Navbar() {
