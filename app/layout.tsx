@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${ibmPlexSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <div className="bg-[url('/background.jpg')] bg-repeat bg-center bg-[length:auto]">
+        <div className="bg-[url('/background.jpg')] bg-repeat bg-center bg-[length:auto]  min-h-[calc(100vh-48px)]">
           {children}
         </div>
       </body>

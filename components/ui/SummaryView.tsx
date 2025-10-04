@@ -8,11 +8,11 @@ export default function SummaryView({
   return (
     <div className="flex flex-row gap-1 items-center justify-center">
       <Icon
-        width={18}
-        height={18}
+        width={14}
+        height={14}
         className="text-[var(--typography-secondary)]"
       />
-      <div className="text-[var(--typography-active)] font-semibold">
+      <div className="text-[var(--typography-active)]  font-semibold text-sm leading-[14px] align-middle">
         {text}
       </div>
     </div>

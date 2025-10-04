@@ -20,6 +20,7 @@ export default function Card<
   bottomRightProps,
   MainContent,
   mainContentProps,
+  customHeight = 112,
 }: CardProps<TMain, TTopLeft, TTopRight, TBottomLeft, TBottomRight>) {
   // Dynamic loading for heavier compoents such as the Table. All the "heavy" components can be added to a list
   const DynamicTable = dynamic(() => import('../ui/TableView'), {
@@ -43,14 +44,14 @@ export default function Card<
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className={`flex flex-col w-full font-bold  items-center justify-center border-1 border-[var(--stroke-main)] rounded-lg overflow-hidden  min-h-[120px]`}
+      className={`flex flex-col w-full font-bold  items-center justify-center border-1 border-[var(--green-800)] rounded-[5px] overflow-hidden  h-[${customHeight}px]`}
     >
       {(TopLeft || TopRight) && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="w-full flex justify-between items-center px-2 sm:px-3 border-b border-[var(--stroke-main)] bg-[image:var(--background-gradient)] min-h-[55px]"
+          className="w-full flex justify-between items-center px-2 md:px-3 py-[11px] border-b-1 border-[var(--stroke-main)] bg-[var(--green-900)]"
         >
           <div>{TopLeft && <TopLeft {...(topLeftProps as TTopLeft)} />}</div>
           <div>
@@ -66,7 +67,7 @@ export default function Card<
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="w-full flex justify-between items-center px-2 sm:px-3 border-t border-[var(--stroke-main)] bg-[image:var(--background-gradient)] min-h-[55px]"
+          className="w-full flex justify-between items-center px-2 md:px-3 py-[11px] border-b-1 border-[var(--stroke-main)] bg-[var(--green-900)]"
         >
           <div>
             {BottomLeft && <BottomLeft {...(bottomLeftProps as TBottomLeft)} />}

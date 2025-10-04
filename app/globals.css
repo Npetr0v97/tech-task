@@ -47,15 +47,17 @@
     #ffcd8c
   );
   --second-gradient: radial-gradient(
-    circle,
-    rgba(19, 44, 50, 1) 0%,
-    rgba(0, 1, 1, 1) 70%
+    38.19% 157.72% at 50% 50%,
+    #132c32 0%,
+    #000101 66.35%
   );
+
   --light-fill-gradient: radial-gradient(
-    circle,
-    rgba(70, 229, 226, 1) 0%,
-    rgba(70, 229, 226, 0) 80%
+    48.64% 50% at 50% 100%,
+    rgba(70, 229, 226, 0.3) 0%,
+    rgba(70, 229, 226, 0) 100%
   );
+
   --user-avatar-gradient: linear-gradient(135deg, #02f553, #00beec);
 }
 

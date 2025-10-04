@@ -5,6 +5,10 @@ export type SimpleTextProps = {
   className?: string;
 };
 
+export type FooterProps = {
+  text: string;
+};
+
 export type ComplexViewProps = {
   items: {
     Component: React.ComponentType<unknown>;
@@ -16,6 +20,8 @@ export type ComplexViewProps = {
 export type DetailProps = {
   label: string;
   value: string | number;
+  firstElement?: boolean;
+  finalElement?: boolean;
 };
 
 export type UserDetailsProps = {
@@ -62,6 +68,8 @@ export type CardProps<
 
   bottomRightComponent?: React.ComponentType<TBottomRight>;
   bottomRightProps?: TBottomRight;
+
+  customHeight?: number;
 };
 
 export type CardContainerProps<
@@ -83,4 +91,5 @@ export type CardContainerProps<
   >[];
   className?: string;
   hasBackgroundGlow?: boolean;
+  cardHeight?: number;
 };
