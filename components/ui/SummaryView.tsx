@@ -6,7 +6,7 @@ export default function SummaryView({
   Icon = MeteoriteIcon,
 }: SummaryViewProps) {
   return (
-    <div className="flex flex-row gap-1 items-center justify-center">
+    <div className="flex flex-row gap-1 h-18 items-center justify-center">
       <Icon
         width={14}
         height={14}
