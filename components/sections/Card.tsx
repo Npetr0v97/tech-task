@@ -67,7 +67,7 @@ export default function Card<
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="w-full flex justify-between items-center px-2 md:px-3 py-[11px] border-b-1 border-[var(--stroke-main)] bg-[var(--green-900)]"
+          className="w-full flex justify-between items-center px-2 sm:px-3 border-t border-[var(--stroke-main)] bg-[image:var(--background-gradient)]"
         >
           <div>
             {BottomLeft && <BottomLeft {...(bottomLeftProps as TBottomLeft)} />}

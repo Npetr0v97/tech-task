@@ -1,10 +1,17 @@
 'use client';
 import { SummaryViewProps } from '@/lib/types/cards';
 import MeteoriteIcon from '@/components/ui/svgs/MeteoriteIcon';
+import SolanaIcon from './svgs/SolanaIcon';
+import { useSolCount } from '@store/solanaStore';
+import { formatNumber } from '@utils/helpers';
 export default function SummaryView({
   text,
   Icon = MeteoriteIcon,
 }: SummaryViewProps) {
+  const solCount = useSolCount();
+  const formattedSolCount = formatNumber(solCount);
+  const isSolana = Icon === SolanaIcon;
+
   return (
     <div className="flex flex-row gap-1 h-18 items-center justify-center">
       <Icon
@@ -13,7 +20,7 @@ export default function SummaryView({
         className="text-[var(--typography-secondary)]"
       />
       <div className="text-[var(--typography-active)]  font-semibold text-sm leading-[14px] align-middle">
-        {text}
+        {isSolana ? formattedSolCount : text}
       </div>
     </div>
   );
